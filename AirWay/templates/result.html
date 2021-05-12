@@ -1,0 +1,9 @@
+{% extends 'masterLayouts.html' %}
+{% block heading %} Flight : {{ flight[0].capitalize() }} to {{ flight[1].capitalize() }} {% endblock %}
+{% block body %}
+    <ul>
+        {% for p in passengers %}
+            <li>{{ p[0] }}</li>
+        {% endfor %}
+    </ul> 
+{% endblock %}

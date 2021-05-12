@@ -1,0 +1,48 @@
+{% extends "masterLayouts.html" %}
+{% block title %} Add Flight {% endblock %}
+{% block heading %} Add a Flight {% endblock %}
+{% block body %}
+    <div>
+        <a class="mt-1 btn btn-dark btn-sm" href="{{ url_for('addRoute') }}">Add Origin/Destination</a>
+        <a class="mt-1 btn btn-dark btn-sm" href="{{ url_for('removeRoute') }}">Remove Origin/Destination</a>
+        <a class="mt-1 btn btn-dark btn-sm" href="{{ url_for('updateRoute') }}">Update Origin/Destination</a>
+    </div>
+    <form action="{{ url_for('rAddFlight') }}" method="POST">
+        <div class="form-group mt-3">
+           <select class="form-control" name="oids" id="oid">
+               <option value="0">Select Origin</option>
+               {% for origin in origins %}
+                    <option value="{{ origin.id }}">{{ origin.origin }}</option>
+               {% endfor %}
+           </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="dids" id="oid">
+                <option value="0">Select Destination</option>
+                {% for destination in destinations %}
+                     <option value="{{ destination.id }}">{{ destination.destination }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="dura" placeholder="Enter Duration (min)" required>
+        </div>
+        <div class="from-group">
+            <button class="form-control mb-2 btn btn-dark">Add Flight</button>
+        </div>
+    </form>
+{% endblock %}
+{% block plink %}<a href="{{ url_for('index') }}">Back</a>{% endblock %}
+{% block gotohome %}<a href="{{ url_for('index') }}">Home</a>{% endblock %}
+
+{% block extra %}
+    <div class="extraDiv container mt-3">
+        <h1>Today's Flight</h1>
+        dsdd
+        <ul id="flist" class="pt-4">
+        {% for flight in flights %}
+           <li><a href="/gflight/{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }} ({{ flight.duration }}min)</a></li> 
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

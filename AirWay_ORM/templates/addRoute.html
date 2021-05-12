@@ -1,0 +1,19 @@
+{% extends 'masterLayouts.html' %}
+{% block title %} addOD {% endblock %}
+{% block heading %} Add Route For Flights {% endblock %}
+
+{% block body %}
+<form action="{{ url_for('rAddRoute') }}" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" name="orig" placeholder="Origin">
+    </div>
+    <div class="mb-3 form-group">
+        <input class="form-control" type="text" name="dest" placeholder="Destination">
+    </div>
+    <div class="from-group">
+        <button class="form-control mb-2 btn btn-dark">Submit</button>
+    </div>
+</form>
+{% endblock %}
+{% block plink %}<a href="{{ url_for('addFlight') }}">Back</a>{% endblock %}
+{% block gotohome %}<a href="{{ url_for('index') }}">Home</a>{% endblock %}

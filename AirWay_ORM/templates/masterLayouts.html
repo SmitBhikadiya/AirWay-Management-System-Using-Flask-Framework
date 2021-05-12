@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style rel="stylesheet">
+        .lbtn > li{
+            margin-top: 1vh;
+        }
+        .mainDiv,.extraDiv{
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="mainDiv container mt-3">
+        <h1>{% block heading %} {% endblock %}</h1>
+        {% block body %} {% endblock %}
+        <h5 class="mt-2 text-center">{% block plink %} {% endblock %}
+        {% block gotohome %}{% endblock %}</h5>
+    </div>
+    {% block extra %} {% endblock %}
+    {% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'masterLayouts.html' %}
+{% block title %}  {% endblock %}
+
+{% block body %} 
+    <h2>Flights : </h2>
+    <ul class="text-danger">
+        <li>Route : {{ flight.origin }} To {{ flight.destination }}</li>
+        <li>Duration : {{ flight.duration }} min</li>
+    </ul>
+    <h2>Passengers : </h2>
+    {% if passengers|length != 0 %}
+    <ul class="text-success">
+        {% for passenger in passengers %}
+            <li>{{ passenger.name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <kbd>Passengers not found!!</kbd>
+    {% endif %}
+{% endblock %}
+
+{% block plink %}<a href="{{ url_for('addFlight') }}">Back</a>{% endblock %}
+{% block gotohome %}<a href="{{ url_for('index') }}">Home</a>{% endblock %}

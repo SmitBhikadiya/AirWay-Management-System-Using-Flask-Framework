@@ -1,0 +1,13 @@
+{% extends 'masterLayouts.html' %}
+{% block title %}Welcome To AirWay{% endblock %}
+{% block heading %} Welcome To AirWay {% endblock %}
+{% block body %} 
+    <div class="bg-light p-2">
+        <ul class="lbtn">
+            <li><a class="btn btn-dark" href="{{ url_for('addFlight') }}">Add Flight</a></li>
+            <li><a class="btn btn-dark" href="{{ url_for('addPassenger') }}">Add Passengers</a></li>
+            <li><a class="btn btn-dark" href="{{ url_for('getFlight') }}">Get Flights Detailes</a></li>
+            <li><a class="btn btn-dark" href="{{ url_for('getPassenger') }}">Get Passengers Detailes</a></li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'masterLayouts.html' %}
+{% block title %}Error{% endblock %}
+{% block body %}
+    <div class="p-3 bg-dark text-light">
+        {% if success|length != 0 %}
+        <h3>Success Message</h3>
+            {% for msg in success %}
+                <p class="p-1 bg-success text-light">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <h3>Error Message</h3>
+            {% for msg in error %}
+                <p class="p-1 bg-danger text-light">{{ msg.capitalize() }}</p>
+            {% endfor %}
+    </div>
+{% endblock %}
+
+{% block plink %}<a href="{{ curl }}">Back</a>{% endblock %}
+{% block gotohome %}<a href="{{ url_for('index') }}">Home</a>{% endblock %}

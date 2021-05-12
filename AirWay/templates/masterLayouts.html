@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style rel="stylesheet">
+        .lbtn > li{
+            margin-top: 1vh;
+        }
+    </style>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container mt-1">
+    
+    <h1> {% block heading %} {% endblock %} </h1>
+    {% block body %} {% endblock %}
+    {% block gotoback %}<h4 class="text-center"><a href="{{ url_for('index') }}">Go To Home</a></h4>{% endblock %}
+    </div>
+</body>
+</html>

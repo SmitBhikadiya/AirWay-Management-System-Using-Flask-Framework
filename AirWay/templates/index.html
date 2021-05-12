@@ -1,0 +1,22 @@
+{% extends "masterLayouts.html" %}
+{% block title %} Flights List {% endblock %}
+{% block heading %} Book a Flight {% endblock %}
+{% block body %}
+    <form action="{{ url_for('result') }}" method="POST">
+        <div class="form-group">
+            <select name="flight" class="form-control">
+                {% for flight in flights %}
+                    <option value="{{ flight[0] }}">{{ flight[1].capitalize() }} to {{ flight[2].capitalize() }}</option>
+                {% endfor %}
+            </select>
+
+            <div class="from-group mt-3">
+                <input type="text" class="form-control" name="passenger" placeholder="Add Passenger" required>
+            </div>
+
+            <div class="from-group mt-3">
+                <button class="btn btn-dark">Submit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
